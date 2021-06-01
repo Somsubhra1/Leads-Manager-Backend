@@ -45,13 +45,18 @@ INSTALLED_APPS = [
     'corsheaders',
     'leads',
     'rest_framework',
-    'knox'
+    'knox',
+    'accounts'
 ]
 
 REST_FRAMEWORK = {
     'DEFAULT_AUTHENTICATION_CLASSES': [
         'knox.auth.TokenAuthentication',
     ]
+}
+
+REST_KNOX = {
+    'AUTH_HEADER_PREFIX': 'Bearer'
 }
 
 MIDDLEWARE = [
@@ -145,5 +150,6 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 CORS_ALLOW_ALL_ORIGINS = True
 
 CORS_ALLOW_CREDENTIALS = True
+
 
 django_on_heroku.settings(locals())
