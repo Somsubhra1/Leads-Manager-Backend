@@ -55,9 +55,9 @@ REST_FRAMEWORK = {
     ]
 }
 
-REST_KNOX = {
-    'AUTH_HEADER_PREFIX': 'Bearer'
-}
+# REST_KNOX = {
+#     'AUTH_HEADER_PREFIX': 'Bearer'
+# }
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
