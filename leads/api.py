@@ -15,7 +15,9 @@ class LeadViewSet(viewsets.ModelViewSet):
 
     # Changing queryset to display just the leads of authenticated user
     def get_queryset(self):
-        return super().request.user.leads.all()
+        return Lead.objects.filter(owner=self.request.user)
+
+        # return self.request.user.leads_set.all()
 
     # Adding owner property to request body data
     def perform_create(self, serializer):
